@@ -16,6 +16,21 @@ def selectionSort(arr):
     
     return arr
 
+# BUBBLE SORT --> In bubble sort we compare ajducent values in a single loop and swap 
+# till the greater elem is at the end. In a single loop when we compare [3,2,1,6,5] 
+# 6 will be always at the end of the array. then we repeat the procedure but we don't 
+# need to include last elem, then second last elem and so on..
+
+def bubbleSort(arr):
+    for i in range(len(arr)-1,0,-1):
+        for j in range(0,i,1):
+            if(arr[j] > arr[j+1]):
+                swap(j,j+1,arr)
+    return arr
+
+
+
+
 
 def swap(a: int,b: int,arr):
     arr[a], arr[b] = arr[b], arr[a]
@@ -27,5 +42,5 @@ def swap(a: int,b: int,arr):
 
 if __name__ == '__main__':
     arr =[3,2,1,6,5]
-    c = selectionSort(arr)
+    c = bubbleSort(arr)
     print(c)
